@@ -9,6 +9,7 @@ class TStack {
         static const int KSize = size;
         T data[KSize];
         int top;
+
     public:
         TStack() : top(0) {}
         void push(const T & item) {
