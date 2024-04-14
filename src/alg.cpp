@@ -23,7 +23,7 @@ std::string infx2pstfx(std::string inf) {
                 while (stack1.get() != '(') {
                     str = str + stack1.pop() + ' ';
                 }
-                if (stack1.get() == ')') {
+                if (stack1.get() == '(') {
                     stack1.pop();
                 }
             } else if (priority[inf[i]] <= priority[stack1.get()]) {
@@ -61,6 +61,11 @@ int eval(std::string pref) {
                 case '*' : {
                     cP = stack2.pop();
                     stack2.push(stack2.pop() * cP);
+                    break;
+                }
+                case '/': {
+                    cP = stack2.pop();
+                    stack2.push(stack2.pop() / cP);
                     break;
                 }
                 case '-' : {
