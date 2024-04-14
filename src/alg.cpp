@@ -24,7 +24,7 @@ std::string infx2pstfx(std::string inf) {
                 }
             } else if (priority[inf[i]] <= priority[stack1.get()]) {
                 char item = stack1.pop();
-                str = str = item + ' ';
+                str = str + item + ' ';
                 stack1.push(inf[i]);
             }
         }
